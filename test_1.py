@@ -16,11 +16,13 @@ def count_char(text, char):
     return count
 j = 1
 result = []
-name = list('Arrival')
+name = list('Arrergwergsdfgrthwrhwrthftghdfghsfghival')
 for el in name:
     num = count_char(name, el)
 
-    if num > j:
+    if num >= j:
         j = num
+        result.insert(0,el)
+    elif num <= j:
         result.append(el)
-    # print('{} - {}'.format(el, num))
+print(result)
