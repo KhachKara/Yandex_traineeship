@@ -19,5 +19,8 @@ lib = {}
 for i in text:
     if i in lib.keys():
         continue
-    lib.update({i: count_char(text, i)})
-print(lib)
+    lib[i] = count_char(text, i)
+aa = sorted(lib.items(), key = lambda x: -x[-1])
+for i in aa:
+    print(i[0] * i[1], end='')
+print()
