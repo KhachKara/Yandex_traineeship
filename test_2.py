@@ -19,3 +19,14 @@
 #      // Return null if this NestedInteger holds a single integer
 #      public List getList();
 #  }
+
+def func(_list):
+    result=[]
+    for i in _list:
+        if type(i) == list:
+            list(map(result.append, func(i)))
+        else:
+            result.append(i)
+    return result
+
+print(func(["a", ["b", "c", ["d"], "e"]]))
