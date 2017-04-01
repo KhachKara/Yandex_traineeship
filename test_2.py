@@ -19,25 +19,35 @@
 #      // Return null if this NestedInteger holds a single integer
 #      public List getList();
 #  }
-
-# def func(_list):
-#     result=[]
+#
+# def func(_list, result=[]):
 #     for i in _list:
 #         if type(i) == list:
-#             list(map(result.append, func(i)))
+#             func(i)
+#             #list(map(result.append, func(i)))
 #         else:
 #             result.append(i)
 #     return result
 #
 # print(func(["a", ["b", "c", ["d"], "e"]]))
 
-def func(_list):
-    result=[]
-    for i in _list:
-        if type(i) == list:
-            result.extend(func(i))
-        else:
-            result.append(i)
-    return result
 
-print(func(["a", ["b", "c", ["d"], "e"]]))
+
+# def f[6,7]]],8]))unc(_list):
+#     result=[]
+#     for i in _list:
+#         if type(i) == list:
+#             result.extend(func(i))
+#         else:
+#             result.append(i)
+#     return result
+#
+# print(func([7,[[[[2]]],[[[]],[4]],[4,5,[6,7]]],8]))
+
+#
+def merge(lst, res = []):
+    for el in lst:
+        merge(el) if isinstance(el, list) else res.append(el)
+    return res
+
+print(merge([7,[[[[2]]],[[[]],[4]],[4,5,[6,7]]],8]))
