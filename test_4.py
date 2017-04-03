@@ -20,3 +20,34 @@
 #     Node(int x) { val = x; }
 # }
 
+class BinTree():
+    def __init__(self, number): # инициализируем значение вершины дерева
+        self.number = number
+        self.left = None # необязательные параметры левый потомок
+        self.right = None # необязательные параметры правый потомок
+    def add_node(self,number, res = []):
+        res.append(self.number)
+        if number >= self.number:
+            if self.right != None:
+                # res.append(self.number)
+                self.right.add_node(number)
+            else:
+                self.right = BinTree(number)
+        else:
+            if self.left != None:
+                # res.append(self.number)
+                self.left.add_node(number)
+            else:
+                self.left = BinTree(number)
+        return res
+tree =  BinTree(15)
+m = [10, 16, 3, 12, 18, 13, 20, 17]
+
+print(tree.add_node(10))
+print(tree.add_node(16))
+print(tree.add_node(3))
+print(tree.add_node(12))
+print(tree.add_node(18))
+print(tree.add_node(13))
+print(tree.add_node(20))
+print(tree.add_node(17))
