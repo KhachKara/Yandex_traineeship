@@ -20,34 +20,36 @@
 #     Node(int x) { val = x; }
 # }
 
-class BinTree():
-    def __init__(self, number): # инициализируем значение вершины дерева
-        self.number = number
-        self.left = None # необязательные параметры левый потомок
-        self.right = None # необязательные параметры правый потомок
-    def add_node(self,number, res = []):
-        res.append(self.number)
-        if number >= self.number:
-            if self.right != None:
-                # res.append(self.number)
-                self.right.add_node(number)
-            else:
-                self.right = BinTree(number)
-        else:
-            if self.left != None:
-                # res.append(self.number)
-                self.left.add_node(number)
-            else:
-                self.left = BinTree(number)
-        return res
-tree =  BinTree(15)
-m = [10, 16, 3, 12, 18, 13, 20, 17]
 
-print(tree.add_node(10))
-print(tree.add_node(16))
-print(tree.add_node(3))
-print(tree.add_node(12))
-print(tree.add_node(18))
-print(tree.add_node(13))
-print(tree.add_node(20))
-print(tree.add_node(17))
+class BinTree:
+    def __init__(self, node_number):  # инициализируем значение вершины дерева
+        self.node_number = node_number
+        self.left = None  # необязательные параметры левый потомок
+        self.right = None  # необязательные параметры правый потомок
+
+    def add_node(self, user_number):
+        res = []
+        if user_number >= self.node_number:
+            if self.right is not None:
+                self.right.add_node(user_number)
+                res.append(str(self.node_number) + str('-->') + str(user_number))
+            else:
+                self.right = BinTree(user_number)
+                res.append(str(self.node_number) + str('-->') + str(BinTree(user_number)))
+        else:
+            if self.left is not None:
+                self.left.add_node(user_number)
+                res.append(str(user_number) + str('<--') + str(self.node_number))
+            else:
+                self.left = BinTree(user_number)
+                res.append(str(BinTree(user_number)) + str('<--') + str(self.node_number))
+        return res
+
+    def __repr__(self):
+        return str(self.node_number)
+
+
+tree = BinTree(15)
+m = [10, 3, 12, 16, 18, 3, 24]
+for i in m:
+    print(tree.add_node(i))
