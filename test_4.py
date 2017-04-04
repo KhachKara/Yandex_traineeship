@@ -19,7 +19,7 @@
 #     public final Node right;
 #     Node(int x) { val = x; }
 # }
-
+import random
 
 class BinTree:
     def __init__(self, node_number):  # инициализируем значение вершины дерева
@@ -32,17 +32,17 @@ class BinTree:
         if user_number >= self.node_number:
             if self.right is not None:
                 self.right.add_node(user_number)
-                res.append(str(self.node_number) + str('-->') + str(user_number))
+                res.append(str(self.node_number) + str('<-->') + str(user_number))
             else:
                 self.right = BinTree(user_number)
-                res.append(str(self.node_number) + str('-->') + str(BinTree(user_number)))
+                res.append(str(self.node_number) + str('<-->') + str(BinTree(user_number)))
         else:
             if self.left is not None:
                 self.left.add_node(user_number)
-                res.append(str(user_number) + str('<--') + str(self.node_number))
+                res.append(str(user_number) + str('<-->') + str(self.node_number))
             else:
                 self.left = BinTree(user_number)
-                res.append(str(BinTree(user_number)) + str('<--') + str(self.node_number))
+                res.append(str(BinTree(user_number)) + str('<-->') + str(self.node_number))
         return res
 
     def __repr__(self):
