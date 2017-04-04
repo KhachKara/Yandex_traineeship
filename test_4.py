@@ -49,7 +49,11 @@ class BinTree:
         return str(self.node_number)
 
 
-tree = BinTree(15)
-m = [10, 3, 12, 16, 18, 3, 24]
+tree = BinTree(20)
+m = []
+j = 0
+while j < 50:
+    m.append(random.randint(0, 50))
+    j += 1
 for i in m:
     print(tree.add_node(i))
