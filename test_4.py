@@ -49,7 +49,7 @@ class BinTree:
         return str(self.node_number)
 
 
-tree = BinTree(20)
+tree = BinTree(15)
 m = []
 j = 0
 while j < 50:
