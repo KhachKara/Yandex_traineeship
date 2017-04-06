@@ -36,11 +36,11 @@ class BinTree:
     def __repr__(self):
         return str(self.node_number)
 
-
-tree = BinTree(15)
-m = []
-for j in range(10):
-    m.append(random.randint(0, 20))
-print(m)
-for i in m:
-    print(tree.add_node(i))
+#
+# tree = BinTree(15)
+# m = []
+# for j in range(10):
+#     m.append(random.randint(0, 20))
+# print(m)
+# for i in m:
+#     print(tree.add_node(i))
