@@ -29,11 +29,9 @@ node_list = []  # список узлов
 
 tree = BinTree(Node)
 number = int(input('Количество узлов: '))
-i = 0
-while i < len(range(number)):
+for i in range(number):
     name.append(string.ascii_uppercase[random.randint(0, 25)])
     key.append(random.randint(0, 100))
     node_list.append(Node.fromkeys(name[i], key[i]))
-    i += 1
 
 print(node_list)
