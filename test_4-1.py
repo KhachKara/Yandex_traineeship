@@ -22,22 +22,18 @@ class BinTree:
         return nodes
 
 
-name = 'A'
+name = ['A']
 key = [15]
-Node = {name: key}
+Node = {name[0]: key}
+node_list = []  # список узлов
 
 tree = BinTree(Node)
+number = int(input('Количество узлов: '))
+i = 0
+while i < len(range(number)):
+    name.append(string.ascii_uppercase[random.randint(0, 25)])
+    key.append(random.randint(0, 100))
+    node_list.append(Node.fromkeys(name[i], key[i]))
+    i += 1
 
-for i in range(10):
-    dict.keys(Node)
-
-tree.add_node(Node)
-print(tree.add_node(Node))
-
-
-# for j in range(10):
-#     key.append(random.randint(0, 20))
-# for k in range(0, 26):
-#     name.append(string.ascii_uppercase[random.randint(0, 25)])
-#     if k == 10:
-#         break
+print(node_list)
