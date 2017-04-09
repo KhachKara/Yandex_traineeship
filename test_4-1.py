@@ -27,6 +27,8 @@ key = [15]
 Node = {name[0]: key}
 node_list = []  # список узлов
 
+
+
 tree = BinTree(Node)
 number = int(input('Количество узлов: '))
 for i in range(number):
